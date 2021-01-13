@@ -1,4 +1,4 @@
-package com.gokhana.template.bus;
+package com.gokhana.template.bus.publisher;
 
 
 import com.gokhana.template.model.event.TemplateEvent;

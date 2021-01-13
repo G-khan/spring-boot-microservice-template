@@ -1,4 +1,4 @@
-package com.gokhana.template.bus;
+package com.gokhana.template.bus.subscriber;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
