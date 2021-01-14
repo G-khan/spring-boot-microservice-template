@@ -1,21 +1,32 @@
 package com.gokhana.template.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 public class TemplateDTO {
 
-    private Long id;
+    private String id;
 
     private String name;
 
-    @JsonIgnore
-    private String userId;
+    private Long userId;
 
-    public Long getId() {
+    public TemplateDTO() {
+    }
+
+    public TemplateDTO(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public TemplateDTO(String id, String name, Long userId) {
+        this.id = id;
+        this.name = name;
+        this.userId = userId;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -27,11 +38,11 @@ public class TemplateDTO {
         this.name = name;
     }
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 

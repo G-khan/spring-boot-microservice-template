@@ -17,14 +17,12 @@ public class KafkaMessageProducerManager implements MessageProducerService {
     private static final Logger LOG = LoggerFactory.getLogger(KafkaMessageProducerManager.class);
 
     private final KafkaTemplate<String, Object> kafkaTemplate;
+    @Value(value = "${kafka.topic.templateEvent}")
+    private String templateEventTopic;
 
     public KafkaMessageProducerManager(KafkaTemplate<String, Object> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
-
-    @Value(value = "${kafka.topic.templateEvent}")
-    private String templateEventTopic;
-
 
     @Override
     @Async

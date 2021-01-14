@@ -3,12 +3,23 @@ server:
 spring:
   application:
     name: template-service
+  data:
+    mongodb:
+      user: root
+      password: test123
+      host: mongo
+      port: 27017
+      database: template
   kafka:
-    bootstrap.servers: 176.235.192.206:9092
+    bootstrap.servers: kafka:9092
     producer:
+      client-id: template
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      client-id: template
       group-id: template-service
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

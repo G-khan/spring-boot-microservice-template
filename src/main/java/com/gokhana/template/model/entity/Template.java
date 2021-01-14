@@ -10,13 +10,17 @@ import javax.validation.constraints.NotBlank;
 public class Template {
 
     @Id
-    private String  id;
+    private String id;
 
     @NotBlank(message = "Thing name can not be null or empty")
     private String name;
 
 
     public Template() {
+    }
+
+    public Template(@NotBlank(message = "Thing name can not be null or empty") String name) {
+        this.name = name;
     }
 
     public String getId() {

@@ -10,8 +10,10 @@ public class KafkaMessageConsumerService {
 
     private final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageConsumerService.class);
 
+
     @KafkaListener(topics = "${kafka.topic.otherTemplate}")
-    public void consumeUserThingEvent(Object otherTemplate) {
+    public void consumeUserThingEvent(String otherTemplate) {
         LOGGER.debug("Message Received. otherTemplate: {}", otherTemplate);
     }
+
 }

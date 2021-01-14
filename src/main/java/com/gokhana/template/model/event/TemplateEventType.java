@@ -14,11 +14,6 @@ public enum TemplateEventType {
         this.eventType = eventType;
     }
 
-    @JsonValue
-    public String getType() {
-        return this.eventType;
-    }
-
     public static TemplateEventType fromString(String eventType) {
         for (TemplateEventType type : TemplateEventType.values()) {
             if (type.eventType.equalsIgnoreCase(eventType)) {
@@ -26,5 +21,10 @@ public enum TemplateEventType {
             }
         }
         return null;
+    }
+
+    @JsonValue
+    public String getType() {
+        return this.eventType;
     }
 }

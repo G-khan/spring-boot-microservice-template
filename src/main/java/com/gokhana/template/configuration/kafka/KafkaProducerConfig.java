@@ -9,11 +9,11 @@ import org.springframework.kafka.core.ProducerFactory;
 @Configuration
 public class KafkaProducerConfig {
 
-	@Autowired
-	private ProducerFactory<String, Object> producerFactory;
+    @Autowired
+    private ProducerFactory<String, Object> producerFactory;
 
-	@Bean
-	public KafkaTemplate<String, Object> kafkaTemplate() {
-		return new KafkaTemplate<>(producerFactory);
-	}
+    @Bean
+    public KafkaTemplate<String, Object> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory);
+    }
 }
