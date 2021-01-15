@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class KafkaMessageConsumerService {
 
@@ -12,8 +14,8 @@ public class KafkaMessageConsumerService {
 
 
     @KafkaListener(topics = "${kafka.topic.otherTemplate}")
-    public void consumeUserThingEvent(String otherTemplate) {
-        LOGGER.debug("Message Received. otherTemplate: {}", otherTemplate);
+    public void consumeUserThingEvent(Map<String,String> otherTemplate) {
+        LOGGER.debug("Message Received. otherTemplate: {}", otherTemplate.toString());
     }
 
 }

@@ -11,12 +11,13 @@ spring:
       port: 27017
       database: template
   kafka:
-    bootstrap.servers: kafka:9092
     producer:
+      bootstrap-servers: kafka:9092
       client-id: template
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer:
+      bootstrap-servers: kafka:9092
       auto-offset-reset: earliest
       enable-auto-commit: true
       client-id: template
