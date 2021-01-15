@@ -3,14 +3,14 @@ package com.gokhana.template.model.event;
 public class TemplateEvent {
 
     private TemplateEventType templateEventType;
-    private String userId;
-    private Long templateId;
+    private Long userId;
+    private String templateId;
     private String templateName;
 
     public TemplateEvent() {
     }
 
-    public TemplateEvent(TemplateEventType templateEventType, String userId, Long templateId, String templateName) {
+    public TemplateEvent(TemplateEventType templateEventType, Long userId, String templateId, String templateName) {
         this.templateEventType = templateEventType;
         this.userId = userId;
         this.templateId = templateId;
@@ -25,19 +25,19 @@ public class TemplateEvent {
         this.templateEventType = templateEventType;
     }
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public Long getTemplateId() {
+    public String getTemplateId() {
         return templateId;
     }
 
-    public void setTemplateId(Long templateId) {
+    public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
 
